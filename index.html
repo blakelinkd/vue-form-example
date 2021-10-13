@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue App</title>
+</head>
+<style>
+    .container {
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #app {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+    .array--container {
+        height: 40vh;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div id="app">
+            <div class="array--container">
+            <div v-show="splitArray(inputString).length > 0 && buttonClicked">
+                <ul>Array Items:
+                    <li v-for="items in splitArray(inputString)">{{ items }}</li>
+                </ul>
+            </div>
+            </div>
+
+
+            <form>
+                <label for="input">Input:</label>
+                <input name="input" v-model="inputString" placeholder="edit me">
+                <button v-on:click="buttonClicked = true" type="button">Go!</button>
+            </form>
+
+        </div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
